@@ -1,0 +1,294 @@
+#application .site-header .page-title-container h1 {
+    margin: 0;
+    font-size: 1.80rem;
+	vertical-align: bottom;
+	display: inline-block;
+	padding-right: 7px;
+}
+
+#application .site-header .page-title-container h2 {
+    margin: 0;
+    font-size: 1.25rem;
+}
+
+#application .site-header .app-divide {
+    display: inline-block;
+    min-height: 4rem;
+    vertical-align: middle;
+}
+
+#application .site-header .page-title-container h6 {
+	color: black;
+	background-color: #f98500;
+	font-size: .9rem;
+	display: inline;
+	margin: 5px;
+	padding-left: 5px;
+	padding-right: 5px;
+	padding-top: 1px;
+	padding-bottom: 1px;
+	vertical-align: 40%;
+	font-weight: bolder;
+}
+.LogoWrapper{
+	position:fixed;
+	bottom:30px;
+	width:100%;
+	display: block;
+	clear:both;
+	background:white;
+}
+
+.DPDLogo {
+    width: 280px !important;
+    max-width: 280px !important;
+	height: auto !important;
+	float: left;
+	margin-bottom: 5px;
+	margin-top: 5px;
+}
+
+.PCPC-Logo {
+    width: 250px !important;
+    max-width: 250px !important;
+	height: auto !important;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 5px;
+	margin-top: 5px;
+}
+.PCPC-Logo-print{
+	width: 350px !important;
+    max-width: 350px !important;
+	height: auto !important;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 10px;
+	margin-top: 10px;
+}
+
+#search{
+	margin:8px 15px;
+	width:100%;
+}
+
+#addr{
+	width: 40%;
+	float: left;
+	vertical-align: middle;
+}
+
+#btnSearch{
+	float: left;
+	vertical-align: middle;
+	width: 45px;
+}
+
+#PrintBtn{
+	width: 100%;
+	position: sticky;
+	position: -webkit-sticky; /* Safari */
+	top: 5px;
+}
+
+#btnPrint{
+	margin-right:15px;
+	float:right;
+}
+
+.button{
+	margin: 2px;
+}
+
+a.button {
+	color: black;
+}
+
+#zoningButton{
+	position: relative;
+	display: block;
+	right: 0px;
+	top: 5px;
+	z-index: 800;
+	pointer-events: auto;
+	background-color: #fff;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	padding: 3px;
+	font-size: 10%;
+	padding: 7px;
+}
+
+.leaflet-disabled{
+	background-color: gray
+}
+
+.arcgisSearch .searchGroup .searchInput {
+      width: 15.625rem;
+	}
+@media print {
+	.noprint {display:none !important;}
+	a:link{
+		text-decoration: underline;
+	}
+	a:link:after, a:visited:after {  
+		content: "";    
+	}
+	#application {display:none !important;}
+	#search {display:none !important;}
+	#results {display:none !important;}
+	div.set {page-break-inside:avoid;}
+	.LogoWrapper {display:none !important;}
+	#PrintBtn {display:none !important;}
+}
+
+@media screen{
+	#printHeader {display:none !important;}
+	#printMap {display:none !important;}
+}
+
+#site-wide-alert button.close-button {
+    color: white;
+}
+.close-button, .close-button.medium {
+    right: 1rem;
+    top: 0.5rem;
+    font-size: 1em;
+    line-height: .5;
+}
+
+.close-button {
+    position: absolute;
+    color: #444;
+    cursor: pointer;
+}
+
+.footer-p{
+	color: white;
+	font-size: 85%;
+}
+
+.zoningInfo::after{
+	height: 50px;
+}
+body::after {
+	content: '';
+	display: block;
+	height: 150px; /* Set same as footer's height */
+}
+
+#Disclosure{
+	font-size: 95%;
+	font-style: italic;
+	text-align: center;
+}
+#DisclosureP2{
+	font-size: 95%;
+	font-style: italic;
+	text-align: center;
+}
+h1:empty{
+	display:none;
+}
+h2:empty{
+	display:none;
+}
+h3:empty{
+	display:none;
+}
+p:empty{
+	display:none;
+}
+element:empty{
+	display:none;
+}
+b:empty{
+	display:none;
+}
+table:empty{
+	display:none;
+}
+#set:empty{
+	display:none;
+}
+sup {
+    vertical-align: top;
+    font-size: smaller;
+}
+a:link{
+	font-weight: 600;
+}
+
+.modal-window {
+  position: fixed;
+  top: 75%;
+  right: 49%;
+  bottom: 5%;
+  left: 49%;
+  z-index: 9999;
+  visibility: hidden;
+  opacity: 1;
+  pointer-events: none;
+  transition: all 0.3s;
+}
+.modal-window:target {
+  visibility: visible;
+  opacity: 1;
+  pointer-events: auto;
+}
+.modal-window a:link {
+	color: #0f4d90 !important;
+	text-decoration: underline !important;
+}
+.modal-window > div {
+  width: 300px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  padding: 2em;
+  background: #ffffff;
+  border: .2px solid gray;
+  border-bottom: 10px solid #0f4d90;
+}
+
+.modal-window h1 {
+  font-size: 150%;
+  font-family: 'Montserrat', 'Tahoma', sans-serif;
+  margin: 0 0 15px;
+}
+
+.modal-close {
+  color: black;
+  font-size: 80%;
+  position: absolute;
+  right: 0;
+  text-align: center;
+  top: 0;
+  text-decoration: none;
+}
+.modal-close:hover {
+  color: #0f4d90;
+}
+
+.fa-window-close {
+	color: #0f4d90;
+	font-size: 22px;
+	padding: 3px
+}
+
+#charts{
+	padding: 25px;
+	width: 50%
+}
+.chart {
+	padding: 25px;
+	width: 50%
+}
+
+.app-footer {
+	z-index: 1;
+}
