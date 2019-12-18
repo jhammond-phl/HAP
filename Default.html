@@ -1,0 +1,234 @@
+<!doctype html>
+<html class="no-js" lang="en">
+
+<head>
+  <meta charset=utf-8 />
+  <meta charset="UTF-8" />
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Housing Action Plan Dashboard | City of Philadelphia</title>
+  <link rel="stylesheet" type="text/css" href="phila-standards/css/phila-app.min.css">
+  <link rel="shortcut icon" type="image/x-icon" href="https://standards.phila.gov/img/favicon.png">
+  <meta name="twitter:card" content="summary">
+  <meta property="og:title" content="">
+  <meta property="og:description" content="">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="">
+  <meta property="og:site_name" content="Digital Standards | City of Philadelphia">
+  <meta property="og:image" content="https://beta.phila.gov/media/20160715133810/phila-gov.jpg">
+
+  <title>Housing Action Plan Dashboard</title>
+  <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+  <!-- Load Leaflet from CDN -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css" integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
+    crossorigin="" />
+  <script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js" integrity="sha512-QVftwZFqvtRNi0ZyCtsznlKSWOStnDORoefr1enyq5mVL4tmKB3S/EnC3rRJcxCPavG10IcrVGSmPh6Qw5lwrg=="
+    crossorigin=""></script>
+
+  <!-- Load Esri Leaflet from CDN -->
+  <script src="https://unpkg.com/esri-leaflet@2.2.3/dist/esri-leaflet.js" integrity="sha512-YZ6b5bXRVwipfqul5krehD9qlbJzc6KOGXYsDjU9HHXW2gK57xmWl2gU6nAegiErAqFXhygKIsWPKbjLPXVb2g=="
+    crossorigin=""></script>
+    
+  <!--JQuery -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+  <!--Font Awesome Link-->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+
+
+  <!--Bootstrap CSS
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+ -->
+
+ <link rel="stylesheet" href="https://cdn.jsdelivr.net/chartist.js/latest/chartist.min.css">
+
+
+ <link href="https://rawgit.com/Globegitter/chartist-plugin-tooltip/master/dist/chartist-plugin-tooltip.css" rel="stylesheet">
+ <script src="http://cdn.jsdelivr.net/chartist.js/latest/chartist.min.js"></script>
+<script src="https://rawgit.com/Globegitter/chartist-plugin-tooltip/master/dist/chartist-plugin-tooltip.min.js"></script>
+<script src="https://rawgit.com/gionkunz/chartist-plugin-accessibility/master/dist/chartist-plugin-accessibility.min.js"></script>
+
+
+
+
+</head>
+
+<body lang="en">
+    <div id="printHeader">
+        <div class="columns">
+          <a href="http://beta.phila.gov/" class="logo">
+            <img src="images/DPD_BELL_logo.jpg" width="360" alt="Dept. of Planning and Development Logo">
+          </a>
+          <div class="app-divide"></div>
+          <div class="page-title-container">
+            <!-- <a href="#/"> -->
+            <h2 class="page-title">Housing Action Plan Dashboard</h2>
+            <!-- </a> -->
+          </div>
+    </div>
+  </div>
+<div id="application">
+  <!-- Begin header -->
+  <header class="site-header app group">
+    <div class="row expanded">
+      <!-- if you don't want a full-width header, remove the expanded class -->
+      <div class="columns">
+        <a href="https://www.phila.gov/departments/department-of-planning-and-development/" class="DPDLogo">
+          <img src="images/DPDBELLlogo.png" alt="City of Philadelphia">
+        </a>
+        <div class="app-divide"></div>
+        <div class="page-title-container">
+          <!-- <a href="#/"> -->
+          <h1 class="page-title"> Housing Action Plan Dashboard</h1>
+          <h2 class="page-subtitle">Results</h2>
+          <!-- </a> -->
+        </div>
+      </div>
+    </div>
+  </header>
+    <div class="app-nav">
+      <div class="row expanded">
+        <div class="columns">
+          <nav>
+          </nav>
+        </div>
+      </div>
+    </div>
+    <main>
+
+    </main>
+    <div class="app-footer anchor">
+        <!-- remove the anchor class if you want to handle footer placement yourself, otherwise it will be postion: fixed -->
+        <footer>
+          <div class="row expanded">
+            <div class="columns">
+              <nav>
+                <ul class="inline-list">
+                  <li>
+                    <a href="#open-modal">Feedback</a>
+                  </li>
+                  <div id="open-modal" class="modal-window">
+                    <div>
+                      <a href="#" title="Close" class="modal-close"><i class="fa fa-window-close" aria-hidden="true"></i></a>
+                      <div>
+                        This site is currently being tested. If you notice anything strange or have any suggestions please <a href="mailto:planning.development@phila.gov">let us know</a>!
+                      </div>
+                    </div>
+                  </div>
+                  <li>
+                      <a href="https://www.phila.gov/media/20190115161305/Housing-Action-Plan-Final-for-Web.pdf"  target='_blank'>Housing Action Plan</a>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+        </footer>
+      </div>
+  </div>
+
+  <div id="zoningInfo">
+        <div class="set">
+         <div class="row">
+           <div class="columns">
+             <h1>Current Unit Activity</h1>
+
+<table cellspacing="0" style="border-color:black; width:100%;">
+	<tbody>
+		<thead height="20" style="height:15.0pt">
+			<td height="60" rowspan="2" style="border-style:solid; border-width:0.5pt; height:45.0pt; padding-left:1px; padding-right:1px; padding-top:1px; text-align:center; vertical-align:middle; white-space:normal; width:80pt" width="106"><span style="font-size:11pt"><strong><span style="font-family:Montserrat"><span style="font-style:normal"><span style="text-decoration:none">Housing Type</span></span></span></strong></span></td>
+			<td rowspan="2" style="border-style:solid; border-width:0.5pt; padding-left:1px; padding-right:1px; padding-top:1px; text-align:center; vertical-align:middle; white-space:normal; width:128pt" width="170"><span style="font-size:11pt"><strong><span style="font-family:Montserrat"><span style="font-style:normal"><span style="text-decoration:none">% Area Median Income</span></span></span></strong></span></td>
+			<td rowspan="2" style="border-style:solid; border-width:0.5pt; padding-left:1px; padding-right:1px; padding-top:1px; text-align:center; vertical-align:middle; white-space:normal; width:106pt" width="141"><span style="font-size:11pt"><strong><span style="font-family:Montserrat"><span style="font-style:normal"><span style="text-decoration:none">Household Income</span></span></span></strong></span></td>
+			<td colspan="2" style="border-left:none; border-style:solid; border-width:0.5pt; padding-left:1px; padding-right:1px; padding-top:1px; text-align:center; vertical-align:middle; white-space:normal; width:118pt" width="156"><span style="font-size:11pt"><strong><span style="font-family:Montserrat"><span style="font-style:normal"><span style="text-decoration:none">Owner</span></span></span></strong></span></td>
+			<td colspan="2" style="border-left:none; border-style:solid; border-width:0.5pt; padding-left:1px; padding-right:1px; padding-top:1px; text-align:center; vertical-align:middle; white-space:normal; width:126pt" width="167"><span style="font-size:11pt"><strong><span style="font-family:Montserrat"><span style="font-style:normal"><span style="text-decoration:none">Renter</span></span></span></strong></span></td>
+			<td rowspan="2" style="border-style:solid; border-width:0.5pt; padding-left:1px; padding-right:1px; padding-top:1px; text-align:center; vertical-align:middle; white-space:normal; width:75pt" width="100"><span style="font-size:11pt"><strong><span style="font-family:Montserrat"><span style="font-style:normal"><span style="text-decoration:none">Current YTD</span></span></span></strong></span></td>
+			<td rowspan="2" style="border-style:solid; border-width:0.5pt; padding-left:1px; padding-right:1px; padding-top:1px; text-align:center; vertical-align:middle; white-space:normal; width:71pt" width="95"><span style="font-size:11pt"><strong><span style="font-family:Montserrat"><span style="font-style:normal"><span style="text-decoration:none">Annual Goal</span></span></span></strong></span></td>
+			<td rowspan="2" style="border-style:solid; border-width:0.5pt; padding-left:1px; padding-right:1px; padding-top:1px; text-align:center; vertical-align:middle; white-space:normal; width:78pt" width="104"><span style="font-size:11pt"><strong><span style="font-family:Montserrat"><span style="font-style:normal"><span style="text-decoration:none">10-Year Goal</span></span></span></strong></span></td>
+		</tr>
+		<tr height="40" style="height:30.0pt">
+			<td height="40" style="border-left:none; border-style:solid; border-top:none; border-width:0.5pt; height:30.0pt; padding-left:1px; padding-right:1px; padding-top:1px; text-align:center; vertical-align:middle; white-space:normal; width:59pt" width="78"><span style="font-size:11pt"><strong><span style="font-family:Montserrat"><span style="font-style:normal"><span style="text-decoration:none">Preserved Units</span></span></span></strong></span></td>
+			<td style="border-left:none; border-style:solid; border-top:none; border-width:0.5pt; padding-left:1px; padding-right:1px; padding-top:1px; text-align:center; vertical-align:middle; white-space:normal; width:59pt" width="78"><span style="font-size:11pt"><strong><span style="font-family:Montserrat"><span style="font-style:normal"><span style="text-decoration:none">New Units</span></span></span></strong></span></td>
+			<td style="border-left:none; border-style:solid; border-top:none; border-width:0.5pt; padding-left:1px; padding-right:1px; padding-top:1px; text-align:center; vertical-align:middle; white-space:normal; width:67pt" width="89"><span style="font-size:11pt"><strong><span style="font-family:Montserrat"><span style="font-style:normal"><span style="text-decoration:none">Preserved Units</span></span></span></strong></span></td>
+			<td style="border-left:none; border-style:solid; border-top:none; border-width:0.5pt; padding-left:1px; padding-right:1px; padding-top:1px; text-align:center; vertical-align:middle; white-space:normal; width:59pt" width="78"><span style="font-size:11pt"><strong><span style="font-family:Montserrat"><span style="font-style:normal"><span style="text-decoration:none">New Units</span></span></span></strong></span></td>
+		</thead>
+		<tr height="20" style="height:15.0pt">
+			<td height="20" style="background:#ffd937; border-style:solid; border-top:none; border-width:0.5pt; height:15.0pt; padding-left:1px; padding-right:1px; padding-top:1px; text-align:center; vertical-align:bottom; white-space:nowrap"><span style="font-size:11pt"><strong><span style="font-family:Montserrat"><span style="font-style:normal"><span style="text-decoration:none">Homeless</span></span></span></strong></span></td>
+			<td style="background:#ffd937; border-left:none; border-style:solid; border-top:none; border-width:0.5pt; padding-left:1px; padding-right:1px; padding-top:1px; vertical-align:bottom; white-space:nowrap"><span style="font-size:11pt"><span style="font-family:Montserrat"><span style="font-weight:400"><span style="font-style:normal"><span style="text-decoration:none">&nbsp;</span></span></span></span></span></td>
+			<td style="background:#ffd937; border-left:none; border-style:solid; border-top:none; border-width:0.5pt; padding-left:1px; padding-right:1px; padding-top:1px; vertical-align:bottom; white-space:nowrap"><span style="font-size:11pt"><span style="font-family:Montserrat"><span style="font-weight:400"><span style="font-style:normal"><span style="text-decoration:none">&nbsp;</span></span></span></span></span></td>
+			<td style="background:#ffd937; border-left:none; border-style:solid; border-top:none; border-width:0.5pt; padding-left:1px; padding-right:1px; padding-top:1px; text-align:center; vertical-align:bottom; white-space:nowrap"><span style="font-size:11pt"><span style="font-family:Montserrat"><span style="font-weight:400"><span style="font-style:normal"><span style="text-decoration:none">-</span></span></span></span></span></td>
+			<td style="background:#ffd937; border-left:none; border-style:solid; border-top:none; border-width:0.5pt; padding-left:1px; padding-right:1px; padding-top:1px; text-align:center; vertical-align:bottom; white-space:nowrap"><span style="font-size:11pt"><span style="font-family:Montserrat"><span style="font-weight:400"><span style="font-style:normal"><span style="text-decoration:none">-</span></span></span></span></span></td>
+			<td style="background:#ffd937; border-left:none; border-style:solid; border-top:none; border-width:0.5pt; padding-left:1px; padding-right:1px; padding-top:1px; text-align:center; vertical-align:bottom; white-space:nowrap"><span style="font-size:11pt"><span style="font-family:Montserrat"><span style="font-weight:400"><span style="font-style:normal"><span style="text-decoration:none">-</span></span></span></span></span></td>
+			<td style="background:#ffd937; border-left:none; border-style:solid; border-top:none; border-width:0.5pt; padding-left:1px; padding-right:1px; padding-top:1px; text-align:center; vertical-align:bottom; white-space:nowrap"><span style="font-size:11pt"><span style="font-family:Montserrat"><span style="font-weight:400"><span style="font-style:normal"><span style="text-decoration:none">41&nbsp;</span></span></span></span></span></td>
+			<td style="background:#ffd937; border-left:none; border-style:solid; border-top:none; border-width:0.5pt; padding-left:1px; padding-right:1px; padding-top:1px; text-align:center; vertical-align:bottom; white-space:nowrap"><span style="font-size:11pt"><span style="font-family:Montserrat"><span style="font-weight:400"><span style="font-style:normal"><span style="text-decoration:none">41</span></span></span></span></span></td>
+			<td style="background:#ffd937; border-left:none; border-style:solid; border-top:none; border-width:0.5pt; padding-left:1px; padding-right:1px; padding-top:1px; text-align:center; vertical-align:bottom; white-space:nowrap"><span style="font-size:11pt"><span style="font-family:Montserrat"><span style="font-weight:400"><span style="font-style:normal"><span style="text-decoration:none">250</span></span></span></span></span></td>
+			<td style="background:#ffd937; border-left:none; border-style:solid; border-top:none; border-width:0.5pt; padding-left:1px; padding-right:1px; padding-top:1px; text-align:center; vertical-align:bottom; white-space:nowrap"><span style="font-size:11pt"><span style="font-family:Montserrat"><span style="font-weight:400"><span style="font-style:normal"><span style="text-decoration:none">2,500</span></span></span></span></span></td>
+		</tr>
+		<tr height="20" style="height:15.0pt">
+			<td height="20" style="background:#8db4e2; border-style:solid; border-top:none; border-width:0.5pt; height:15.0pt; padding-left:1px; padding-right:1px; padding-top:1px; text-align:center; vertical-align:bottom; white-space:nowrap"><span style="font-size:11pt"><strong><span style="font-family:Montserrat"><span style="font-style:normal"><span style="text-decoration:none">Affordable</span></span></span></strong></span></td>
+			<td style="background:#8db4e2; border-left:none; border-style:solid; border-top:none; border-width:0.5pt; padding-left:1px; padding-right:1px; padding-top:1px; text-align:center; vertical-align:middle; white-space:normal; width:128pt" width="170"><span style="font-size:11pt"><span style="font-family:Montserrat"><span style="font-weight:400"><span style="font-style:normal"><span style="text-decoration:none">&lt;80%</span></span></span></span></span></td>
+			<td style="background:#8db4e2; border-left:none; border-style:solid; border-top:none; border-width:0.5pt; padding-left:1px; padding-right:1px; padding-top:1px; text-align:center; vertical-align:middle; white-space:normal; width:106pt" width="141"><span style="font-size:11pt"><span style="font-family:Montserrat"><span style="font-weight:400"><span style="font-style:normal"><span style="text-decoration:none">$0-67,000</span></span></span></span></span></td>
+			<td style="background:#8db4e2; border-bottom-style:solid; border-bottom-width:0.5pt; border-left:0.5pt solid; border-right-style:solid; border-right-width:0.5pt; border-top:0.5pt none; padding-left:1px; padding-right:1px; padding-top:1px; text-align:center; vertical-align:middle; white-space:normal; width:59pt" width="78"><span style="font-size:11pt"><span style="font-family:Montserrat"><span style="font-weight:400"><span style="font-style:normal"><span style="text-decoration:none">4,309</span></span></span></span></span></td>
+			<td style="background:#8db4e2; border-left:none; border-style:solid; border-top:none; border-width:0.5pt; padding-left:1px; padding-right:1px; padding-top:1px; text-align:center; vertical-align:bottom; white-space:nowrap"><span style="font-size:11pt"><span style="font-family:Montserrat"><span style="font-weight:400"><span style="font-style:normal"><span style="text-decoration:none">153</span></span></span></span></span></td>
+			<td style="background:#8db4e2; border-left:none; border-style:solid; border-top:none; border-width:0.5pt; padding-left:1px; padding-right:1px; padding-top:1px; text-align:center; vertical-align:bottom; white-space:nowrap"><span style="font-size:11pt"><span style="font-family:Montserrat"><span style="font-weight:400"><span style="font-style:normal"><span style="text-decoration:none">987</span></span></span></span></span></td>
+			<td style="background:#8db4e2; border-left:none; border-style:solid; border-top:none; border-width:0.5pt; padding-left:1px; padding-right:1px; padding-top:1px; text-align:center; vertical-align:bottom; white-space:nowrap"><span style="font-size:11pt"><span style="font-family:Montserrat"><span style="font-weight:400"><span style="font-style:normal"><span style="text-decoration:none">254</span></span></span></span></span></td>
+			<td style="background:#8db4e2; border-left:none; border-style:solid; border-top:none; border-width:0.5pt; padding-left:1px; padding-right:1px; padding-top:1px; text-align:center; vertical-align:bottom; white-space:nowrap"><span style="font-size:11pt"><span style="font-family:Montserrat"><span style="font-weight:400"><span style="font-style:normal"><span style="text-decoration:none">5,703</span></span></span></span></span></td>
+			<td style="background:#8db4e2; border-left:none; border-style:solid; border-top:none; border-width:0.5pt; padding-left:1px; padding-right:1px; padding-top:1px; text-align:center; vertical-align:middle; white-space:normal; width:71pt" width="95"><span style="font-size:11pt"><span style="font-family:Montserrat"><span style="font-weight:400"><span style="font-style:normal"><span style="text-decoration:none">7,100</span></span></span></span></span></td>
+			<td style="background:#8db4e2; border-left:none; border-style:solid; border-top:none; border-width:0.5pt; padding-left:1px; padding-right:1px; padding-top:1px; text-align:center; vertical-align:bottom; white-space:nowrap"><span style="font-size:11pt"><span style="font-family:Montserrat"><span style="font-weight:400"><span style="font-style:normal"><span style="text-decoration:none">71,000</span></span></span></span></span></td>
+		</tr>
+		<tr height="20" style="height:15.0pt">
+			<td height="20" style="background:#ffc000; border-style:solid; border-top:none; border-width:0.5pt; height:15.0pt; padding-left:1px; padding-right:1px; padding-top:1px; text-align:center; vertical-align:bottom; white-space:nowrap"><span style="font-size:11pt"><strong><span style="font-family:Montserrat"><span style="font-style:normal"><span style="text-decoration:none">Workforce</span></span></span></strong></span></td>
+			<td style="background:#ffc000; border-left:none; border-style:solid; border-top:none; border-width:0.5pt; padding-left:1px; padding-right:1px; padding-top:1px; text-align:center; vertical-align:middle; white-space:normal; width:128pt" width="170"><span style="font-size:11pt"><span style="font-family:Montserrat"><span style="font-weight:400"><span style="font-style:normal"><span style="text-decoration:none">80-120%</span></span></span></span></span></td>
+			<td style="background:#ffc000; border-left:none; border-style:solid; border-top:none; border-width:0.5pt; padding-left:1px; padding-right:1px; padding-top:1px; text-align:center; vertical-align:middle; white-space:normal; width:106pt" width="141"><span style="font-size:11pt"><span style="font-family:Montserrat"><span style="font-weight:400"><span style="font-style:normal"><span style="text-decoration:none">$67,000-100,000</span></span></span></span></span></td>
+			<td style="background:#ffc000; border-bottom-style:solid; border-bottom-width:0.5pt; border-left:0.5pt solid; border-right-style:solid; border-right-width:0.5pt; border-top:0.5pt none; padding-left:1px; padding-right:1px; padding-top:1px; text-align:center; vertical-align:middle; white-space:normal; width:59pt" width="78"><span style="font-size:11pt"><span style="font-family:Montserrat"><span style="font-weight:400"><span style="font-style:normal"><span style="text-decoration:none">28</span></span></span></span></span></td>
+			<td style="background:#ffc000; border-left:none; border-style:solid; border-top:none; border-width:0.5pt; padding-left:1px; padding-right:1px; padding-top:1px; text-align:center; vertical-align:bottom; white-space:nowrap"><span style="font-size:11pt"><span style="font-family:Montserrat"><span style="font-weight:400"><span style="font-style:normal"><span style="text-decoration:none">63</span></span></span></span></span></td>
+			<td style="background:#ffc000; border-left:none; border-style:solid; border-top:none; border-width:0.5pt; padding-left:1px; padding-right:1px; padding-top:1px; text-align:center; vertical-align:bottom; white-space:nowrap"><span style="font-size:11pt"><span style="font-family:Montserrat"><span style="font-weight:400"><span style="font-style:normal"><span style="text-decoration:none">-</span></span></span></span></span></td>
+			<td style="background:#ffc000; border-left:none; border-style:solid; border-top:none; border-width:0.5pt; padding-left:1px; padding-right:1px; padding-top:1px; text-align:center; vertical-align:bottom; white-space:nowrap"><span style="font-size:11pt"><span style="font-family:Montserrat"><span style="font-weight:400"><span style="font-style:normal"><span style="text-decoration:none">90</span></span></span></span></span></td>
+			<td style="background:#ffc000; border-left:none; border-style:solid; border-top:none; border-width:0.5pt; padding-left:1px; padding-right:1px; padding-top:1px; text-align:center; vertical-align:bottom; white-space:nowrap"><span style="font-size:11pt"><span style="font-family:Montserrat"><span style="font-weight:400"><span style="font-style:normal"><span style="text-decoration:none">181</span></span></span></span></span></td>
+			<td style="background:#ffc000; border-left:none; border-style:solid; border-top:none; border-width:0.5pt; padding-left:1px; padding-right:1px; padding-top:1px; text-align:center; vertical-align:bottom; white-space:nowrap"><span style="font-size:11pt"><span style="font-family:Montserrat"><span style="font-weight:400"><span style="font-style:normal"><span style="text-decoration:none">1,150</span></span></span></span></span></td>
+			<td style="background:#ffc000; border-left:none; border-style:solid; border-top:none; border-width:0.5pt; padding-left:1px; padding-right:1px; padding-top:1px; text-align:center; vertical-align:bottom; white-space:nowrap"><span style="font-size:11pt"><span style="font-family:Montserrat"><span style="font-weight:400"><span style="font-style:normal"><span style="text-decoration:none">11,500</span></span></span></span></span></td>
+		</tr>
+		<tr height="40" style="height:30.0pt">
+			<td height="40" style="background:#00b050; border-style:solid; border-top:none; border-width:0.5pt; height:30.0pt; padding-left:1px; padding-right:1px; padding-top:1px; text-align:center; vertical-align:middle; white-space:normal; width:80pt" width="106"><span style="font-size:11pt"><strong><span style="font-family:Montserrat"><span style="font-style:normal"><span style="text-decoration:none">Market-Rate</span></span></span></strong></span></td>
+			<td style="background:#00b050; border-left:none; border-style:solid; border-top:none; border-width:0.5pt; padding-left:1px; padding-right:1px; padding-top:1px; vertical-align:bottom; white-space:nowrap"><span style="font-size:11pt"><span style="font-family:Montserrat"><span style="font-weight:400"><span style="font-style:normal"><span style="text-decoration:none">&nbsp;</span></span></span></span></span></td>
+			<td style="background:#00b050; border-left:none; border-style:solid; border-top:none; border-width:0.5pt; padding-left:1px; padding-right:1px; padding-top:1px; vertical-align:bottom; white-space:nowrap"><span style="font-size:11pt"><span style="font-family:Montserrat"><span style="font-weight:400"><span style="font-style:normal"><span style="text-decoration:none">&nbsp;</span></span></span></span></span></td>
+			<td style="background:#00b050; border-left:none; border-style:solid; border-top:none; border-width:0.5pt; padding-left:1px; padding-right:1px; padding-top:1px; text-align:center; vertical-align:bottom; white-space:nowrap"><span style="font-size:11pt"><span style="font-family:Montserrat"><span style="font-weight:400"><span style="font-style:normal"><span style="text-decoration:none">5</span></span></span></span></span></td>
+			<td style="background:#00b050; border-left:none; border-style:solid; border-top:none; border-width:0.5pt; padding-left:1px; padding-right:1px; padding-top:1px; text-align:center; vertical-align:bottom; white-space:nowrap"><span style="font-size:11pt"><span style="font-family:Montserrat"><span style="font-weight:400"><span style="font-style:normal"><span style="text-decoration:none">662</span></span></span></span></span></td>
+			<td style="background:#00b050; border-left:none; border-style:solid; border-top:none; border-width:0.5pt; padding-left:1px; padding-right:1px; padding-top:1px; text-align:center; vertical-align:bottom; white-space:nowrap"><span style="font-size:11pt"><span style="font-family:Montserrat"><span style="font-weight:400"><span style="font-style:normal"><span style="text-decoration:none">-</span></span></span></span></span></td>
+			<td style="background:#00b050; border-left:none; border-style:solid; border-top:none; border-width:0.5pt; padding-left:1px; padding-right:1px; padding-top:1px; text-align:center; vertical-align:bottom; white-space:nowrap"><span style="font-size:11pt"><span style="font-family:Montserrat"><span style="font-weight:400"><span style="font-style:normal"><span style="text-decoration:none">679</span></span></span></span></span></td>
+			<td style="background:#00b050; border-left:none; border-style:solid; border-top:none; border-width:0.5pt; padding-left:1px; padding-right:1px; padding-top:1px; text-align:center; vertical-align:bottom; white-space:nowrap"><span style="font-size:11pt"><span style="font-family:Montserrat"><span style="font-weight:400"><span style="font-style:normal"><span style="text-decoration:none">1,346</span></span></span></span></span></td>
+			<td style="background:#00b050; border-left:none; border-style:solid; border-top:none; border-width:0.5pt; padding-left:1px; padding-right:1px; padding-top:1px; text-align:center; vertical-align:bottom; white-space:nowrap"><span style="font-size:11pt"><span style="font-family:Montserrat"><span style="font-weight:400"><span style="font-style:normal"><span style="text-decoration:none">1,500</span></span></span></span></span></td>
+			<td style="background:#00b050; border-left:none; border-style:solid; border-top:none; border-width:0.5pt; padding-left:1px; padding-right:1px; padding-top:1px; text-align:center; vertical-align:bottom; white-space:nowrap"><span style="font-size:11pt"><span style="font-family:Montserrat"><span style="font-weight:400"><span style="font-style:normal"><span style="text-decoration:none">15,000</span></span></span></span></span></td>
+		</tr>
+		<tr height="20" style="height:15.0pt">
+			<td height="20" style="border-style:solid; border-top:none; border-width:0.5pt; height:15.0pt; padding-left:1px; padding-right:1px; padding-top:1px; text-align:center; vertical-align:bottom; white-space:nowrap"><span style="font-size:11pt"><strong><span style="font-family:Montserrat"><span style="font-style:normal"><span style="text-decoration:none">Total</span></span></span></strong></span></td>
+			<td style="border-left:none; border-style:solid; border-top:none; border-width:0.5pt; padding-left:1px; padding-right:1px; padding-top:1px; vertical-align:bottom; white-space:nowrap"><span style="font-size:11pt"><span style="font-family:Montserrat"><span style="font-weight:400"><span style="font-style:normal"><span style="text-decoration:none">&nbsp;</span></span></span></span></span></td>
+			<td style="border-left:none; border-style:solid; border-top:none; border-width:0.5pt; padding-left:1px; padding-right:1px; padding-top:1px; vertical-align:bottom; white-space:nowrap"><span style="font-size:11pt"><span style="font-family:Montserrat"><span style="font-weight:400"><span style="font-style:normal"><span style="text-decoration:none">&nbsp;</span></span></span></span></span></td>
+			<td style="border-left:none; border-style:solid; border-top:none; border-width:0.5pt; padding-left:1px; padding-right:1px; padding-top:1px; text-align:center; vertical-align:bottom; white-space:nowrap"><span style="font-size:11pt"><span style="font-family:Montserrat"><span style="font-weight:400"><span style="font-style:normal"><span style="text-decoration:none">4,342</span></span></span></span></span></td>
+			<td style="border-left:none; border-style:solid; border-top:none; border-width:0.5pt; padding-left:1px; padding-right:1px; padding-top:1px; text-align:center; vertical-align:bottom; white-space:nowrap"><span style="font-size:11pt"><span style="font-family:Montserrat"><span style="font-weight:400"><span style="font-style:normal"><span style="text-decoration:none">878</span></span></span></span></span></td>
+			<td style="border-left:none; border-style:solid; border-top:none; border-width:0.5pt; padding-left:1px; padding-right:1px; padding-top:1px; text-align:center; vertical-align:bottom; white-space:nowrap"><span style="font-size:11pt"><span style="font-family:Montserrat"><span style="font-weight:400"><span style="font-style:normal"><span style="text-decoration:none">987</span></span></span></span></span></td>
+			<td style="border-left:none; border-style:solid; border-top:none; border-width:0.5pt; padding-left:1px; padding-right:1px; padding-top:1px; text-align:center; vertical-align:bottom; white-space:nowrap"><span style="font-size:11pt"><span style="font-family:Montserrat"><span style="font-weight:400"><span style="font-style:normal"><span style="text-decoration:none">1,064</span></span></span></span></span></td>
+			<td style="border-left:none; border-style:solid; border-top:none; border-width:0.5pt; padding-left:1px; padding-right:1px; padding-top:1px; text-align:center; vertical-align:bottom; white-space:nowrap"><span style="font-size:11pt"><span style="font-family:Montserrat"><span style="font-weight:400"><span style="font-style:normal"><span style="text-decoration:none">7,271</span></span></span></span></span></td>
+			<td style="border-left:none; border-style:solid; border-top:none; border-width:0.5pt; padding-left:1px; padding-right:1px; padding-top:1px; text-align:center; vertical-align:bottom; white-space:nowrap"><span style="font-size:11pt"><span style="font-family:Montserrat"><span style="font-weight:400"><span style="font-style:normal"><span style="text-decoration:none">10,000</span></span></span></span></span></td>
+			<td style="border-left:none; border-style:solid; border-top:none; border-width:0.5pt; padding-left:1px; padding-right:1px; padding-top:1px; text-align:center; vertical-align:bottom; white-space:nowrap"><span style="font-size:11pt"><span style="font-family:Montserrat"><span style="font-weight:400"><span style="font-style:normal"><span style="text-decoration:none">100,000</span></span></span></span></span></td>
+		</tr>
+	</tbody>
+</table>
+
+           </div>
+         </div>
+       </div>
+       <div id="charts">
+       <div class="ct-chart ct-square" id="chart2"></div>
+       <div class="ct-chart ct-square" id="chart3"></div>
+      </div>
+       
+         </div>
+
+<link rel="stylesheet" href="stylesheet.css" /> 
+
+
+
+</body>  
+
+<script src="js/charts.js"></script>
+
+</html>
