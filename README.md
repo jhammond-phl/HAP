@@ -1,5 +1,4 @@
- 
- <h1>Current Unit Activity</h1>           
+<h1>Current Unit Activity</h1>           
 <div ng-app="myApp" ng-controller="myCtrl">
 
 <table cellspacing="0" style="border-color:black; width: 100%">
