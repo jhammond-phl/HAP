@@ -1,37 +1,106 @@
-## Welcome to GitHub Pages
+ <h1>Current Unit Activity</h1>           
+<div ng-app="myApp" ng-controller="myCtrl">
 
-You can use the [editor on GitHub](https://github.com/jhammond-phl/HAP/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
-
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
-
-### Markdown
-
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/jhammond-phl/HAP/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+<table cellspacing="0" style="border-color:black; width: 100%">
+<tbody>
+  <thead height="20" style="height:15pt">
+    <td height="60" rowspan="2">Housing Type</td>
+    <td rowspan="2" >% Area Median Income</td>
+    <td rowspan="2" >Household Income</td>
+    <td colspan="2">Owner</td>
+    <td colspan="2">Renter</td>
+    <td rowspan="2">Current YTD</td>
+    <td rowspan="2">Annual Goal</td>
+    <td rowspan="2">10-Year Goal</td>
+  </tr>
+  <tr height="40" style="height:30.0pt">
+    <td height="40" >Preserved Units</td>
+    <td>New Units</td>
+    <td>Preserved Units</td>
+    <td>New Units</td>
+    </tr>
+  </thead>
+  <tr id="homelessRow" height="20" style="height:15.0pt">
+    <td height="20" style="text-align:center"><b>Homeless</b></td>
+    <td style="text-align:center"></td>
+    <td style="text-align:center"></td>
+    <td>1</td>
+    <td>1</td>
+    <td>1</td>
+    <td>1</td>
+    <td>1</td>
+    <td>250</td>
+    <td>2,500</td>
+  </tr>
+  <tr class="affordableRow" height="20" style="height:15.0pt">
+    	<td rowspan="3" style="text-align:center"><b>Affordable</b></td>
+      <td style="text-align:center">&nbsp;&lt;30%</td>
+      <td style="text-align:center">$0 - 25,000</td>
+			<td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+			<td>1</td>
+			<td>3,940</td>
+			<td>39,400</td>
+		</tr>
+		<tr class="affordableRow" height="22" style="height:16.5pt">
+      <td style="text-align:center">30-50%</td>
+      <td style="text-align:center">$25,000 - 42,000</td>
+			<td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+			<td>1</td>
+			<td>1,220</td>
+			<td>12,200</td>
+		</tr>
+		<tr class="affordableRow" height="22" style="height:16.5pt">
+      <td style="text-align:center">50-80%</td>
+      <td style="text-align:center">$42,000 - 67,000</td>
+			<td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+			<td>1</td>
+			<td>1,940</td>
+			<td>19,400</td>
+		</tr>
+    <tr class="workforceRow" height="20" style="height:15.0pt">
+			<td style="text-align:center"><b>Workforce</b></td>
+			<td style="text-align:center">80-120%</td>
+			<td style="text-align:center">$67,000-100,000</td>
+			<td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+			<td>1</td>
+			<td>1,150</td>
+			<td>11,500</td>
+    </tr>
+    <tr class="marketRateRow" height="40" style="height:30.0pt">
+			<td style="text-align:center"><b>Market-Rate</b></td>
+			<td style="text-align:center"></td>
+			<td></td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+			<td>1</td>
+			<td>1,500</td>
+			<td>15,000</td>
+    </tr>
+    <tfoot height="20" style="height:15.0pt">
+			<td style="text-align:center"><b>Total</b></td>
+			<td></td>
+			<td></td>
+			<td style="text-align:right">1</td>
+			<td style="text-align:right">1</td>
+			<td style="text-align:right">1</td>
+			<td style="text-align:right">1</td>
+			<td style="text-align:right">1</td>
+			<td style="text-align:right">10,000</td>
+			<td style="text-align:right">100,000</td>
+    </tfoots>
+</tbody>
+</table>
