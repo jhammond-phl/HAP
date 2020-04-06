@@ -292,3 +292,101 @@ a:link{
 .app-footer {
 	z-index: 1;
 }
+
+thead td{
+	text-align: center;
+}
+
+#homelessRow{
+	background:#ffd937; 
+	border-left:none; 
+	border-style:solid; 
+	border-top:none; 
+	border-width:0.5pt; 
+	padding-left:1px; 
+	padding-right:1px; 
+	padding-top:1px; 
+	vertical-align:bottom; 
+	white-space:nowrap;
+	font-size:11pt;
+	font-family:"Montserrat";
+	font-weight:400;
+	font-style:normal;
+	text-decoration:none;
+	text-align:right
+}
+.affordableRow{
+	background:#8db4e2 !important; 
+	border-left:none; 
+	border-style:solid; 
+	border-top:none; 
+	border-width:0.5pt; 
+	padding-left:1px; 
+	padding-right:1px; 
+	padding-top:1px; 
+	vertical-align:middle; 
+	white-space:normal; 
+	width:128pt;
+	font-size:11pt;
+	font-family:"Montserrat";
+	font-weight:400;
+	font-style:normal;
+	text-decoration:none;
+	text-align:right
+}
+.workforceRow{
+	background:#ffc000 !important; 
+	border-bottom-style:solid;
+	border-bottom-width:0.5pt; 
+	border-left:0.5pt solid; 
+	border-right-style:solid; 
+	border-right-width:0.5pt; 
+	border-top:0.5pt none; 
+	padding-left:1px; 
+	padding-right:1px; 
+	padding-top:1px; 
+	text-align:right; 
+	vertical-align:middle; 
+	white-space:normal; 
+	font-size:11pt;
+	font-family:"Montserrat";
+	font-weight:400;
+	font-style:normal;
+	text-decoration:none;
+	text-align:right
+}
+.marketRateRow{
+	background:#00b050 !important;
+	border-left:none; 
+	border-style:solid; 
+	border-top:none; 
+	border-width:0.5pt; 
+	padding-left:1px; 
+	padding-right:1px; 
+	padding-top:1px; 
+	vertical-align:bottom; 
+	white-space:nowrap;
+	font-size:11pt;
+	font-family:"Montserrat";
+	font-weight:400;
+	font-style:normal;
+	text-decoration:none;
+	text-align:right
+}
+tfoot{
+	border-left:none; 
+	border-style:solid; 
+	border-top:none; 
+	border-width:0.5pt; 
+	padding-left:1px; 
+	padding-right:1px; 
+	padding-top:1px; 
+	vertical-align:bottom; 
+	white-space:nowrap;
+	font-size:11pt;
+	font-family:"Montserrat";
+	font-weight:400;
+	font-style:normal;
+	text-decoration:none;
+	color:black !important;
+}
