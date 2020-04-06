@@ -83,7 +83,7 @@
     <td height="20" style="text-align:center"><b>Homeless</b></td>
     <td style="text-align:center"></td>
     <td style="text-align:center"></td>
-    <td>{{ homelessPO | currency:'USD' }}</td>
+    <td>{{ homelessPO | number }}</td>
     <td>{{ homelessNO | number }}</td>
     <td>{{ homelessPR | number }}</td>
     <td>{{ homelessNR | number }}</td>
@@ -163,11 +163,6 @@
     </tfoots>
 </tbody>
 </table>
-
-<h1>Preserved Units: </h1>
-<h2>{{ homelessPO + aff30PO + aff50PO + aff80PO + workforcePO + marketPO + homelessPR + aff30PR + aff50PR + aff80PR + workforcePR + marketPR | number }}</h2>
-<h1>New Units:</h1>
-<h2>{{homelessNO + aff30NO + aff50NO + aff80NO + workforceNO + marketNO + homelessNR + aff30NR + aff50NR + aff80NR + workforceNR + marketNR | number }}</h2> 
 </div>
 
 <link rel="stylesheet" href="stylesheet.css" /> 
