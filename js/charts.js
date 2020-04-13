@@ -3,6 +3,8 @@
 // For the tooltips, meta would be the text you want the popup to show, and value will be the number for both the chart
 // labels are for the X axis
 
+document.addEventListener("DOMContentLoaded",function(){
+
 Papa.parse("https://raw.githubusercontent.com/jhammond-phl/HAP/master/writeData.csv", {
   download: true,
   delimiter: ",",
@@ -15,9 +17,24 @@ Papa.parse("https://raw.githubusercontent.com/jhammond-phl/HAP/master/writeData.
     var aff80 = results.data[3]
     var workforce = results.data[4]
     var market = results.data[5]
+    var total = results.data[6]
+    console.log(homeless["Owner Preserved Units"])
+    console.log(aff30["Renter Preserved Units"])
+    var aff30RentPres = aff30["Renter Preserved Units"]
+    console.log(aff30RentPres)
+    console.log(aff50)
+    console.log(aff80)
+    console.log(workforce)
+    console.log(market)
+    console.log(total)
+    console.log(aff30RentPres)
     
-    var app = angular.module("myApp",[]); 
-    app.controller("myCtrl", function($scope) {
+    var app = angular.module('myApp',[]); 
+    app.controller('myCtrl', function($scope) {
+      $scope.firstName = "John";
+      $scope.lastName = "Doe";
+      console.log("jOn");
+      console.log(aff30RentPres);
       $scope.homelessPO = Number(homeless["Owner Preserved Units"]);
       $scope.homelessNO = Number(homeless["Owner New Units"]);
       $scope.homelessPR = Number(homeless["Renter Preserved Units"]);
@@ -42,6 +59,7 @@ Papa.parse("https://raw.githubusercontent.com/jhammond-phl/HAP/master/writeData.
       $scope.marketNO = Number(market["Owner New Units"]);
       $scope.marketPR = Number(market["Renter Preserved Units"]);
       $scope.marketNR = Number(market["Renter New Units"]);
-    });
-  }
+    }
+    );
+}})
 })
