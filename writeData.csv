@@ -1,8 +1,8 @@
 Housing Type,AMI,Owner Preserved Units,Owner New Units,Renter Preserved Units,Renter New Units,2019,Annual Goal,10 Year Goal
-Homeless,,0,0,0,48,48,250,2500
-Affordable,<30%,6571,42,1733,911,9257,3940,39400
-Affordable,30-50%,950,261,431,117,1759,1220,12200
-Affordable,50-80%,145,463,18,679,1305,1940,19400
+Homeless,,0,0,0,78,78,250,2500
+Affordable,<30%,6571,42,1733,908,9254,3940,39400
+Affordable,30-50%,950,261,431,103,1745,1220,12200
+Affordable,50-80%,145,463,18,666,1292,1940,19400
 Workforce,80-120%,53,374,0,0,427,1150,11500
 Market-Rate,>120%,0,1309,0,2069,3378,1500,15000
 Total,,7719,2449,2182,3824,16174,10000,100000
