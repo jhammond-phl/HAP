@@ -20,14 +20,6 @@
   <title>Housing Action Plan Dashboard</title>
   <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
   <!-- Load Leaflet from CDN -->
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css" integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
-    crossorigin="" />
-  <script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js" integrity="sha512-QVftwZFqvtRNi0ZyCtsznlKSWOStnDORoefr1enyq5mVL4tmKB3S/EnC3rRJcxCPavG10IcrVGSmPh6Qw5lwrg=="
-    crossorigin=""></script>
-
-  <!-- Load Esri Leaflet from CDN -->
-  <script src="https://unpkg.com/esri-leaflet@2.2.3/dist/esri-leaflet.js" integrity="sha512-YZ6b5bXRVwipfqul5krehD9qlbJzc6KOGXYsDjU9HHXW2gK57xmWl2gU6nAegiErAqFXhygKIsWPKbjLPXVb2g=="
-    crossorigin=""></script>
     
   <!--JQuery -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -47,13 +39,9 @@
  <script src="https://cdn.jsdelivr.net/chartist.js/latest/chartist.min.js"></script>
 <script src="https://rawgit.com/Globegitter/chartist-plugin-tooltip/master/dist/chartist-plugin-tooltip.min.js"></script>
 <script src="https://rawgit.com/gionkunz/chartist-plugin-accessibility/master/dist/chartist-plugin-accessibility.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-csv/0.71/jquery.csv-0.71.min.js"></script>
 <script src="https://unpkg.com/papaparse@5.1.1/papaparse.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/vue@2.6.11"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.js"></script>
 
-<script src="js/charts.js"></script>
-<script type = "text/typescript" src="js/app.module.ts"></script>
  
 
 </head>
@@ -71,8 +59,9 @@
     <td rowspan="2" >% Area Median Income</td>
     <td colspan="2">Owner</td>
     <td colspan="2">Renter</td>
-    <td rowspan="2">Current YTD</td>
+    <td rowspan="2">Jan - June 2020</td>
     <td rowspan="2">Annual Goal</td>
+    <td rowspan="2">2019 - Present</td>
     <td rowspan="2">10-Year Goal</td>
   </tr>
   <tr height="40" style="height:30.0pt">
@@ -85,76 +74,83 @@
   <tr id="homelessRow" height="20" style="height:15.0pt">
     <td height="20" style="text-align:center"><b>Homeless</b></td>
     <td style="text-align:center"></td>
-    <td>0</td>
-    <td>0</td>
-    <td>0</td>
-    <td>78</td>
-    <td>78</td>
+    <td><!--{{ homelessPO | number }}-->0</td>
+    <td><!--{{ homelessNO | number }}-->0</td>
+    <td><!--{{ homelessPR | number }}-->80</td>
+    <td><!--{{ homelessNR | number }}-->27</td>
+    <td><!--{{ homelessPO + homelessNO + homelessPR + homelessNR | number }}-->107</td>
     <td>250</td>
+    <td>185</td>
     <td>2,500</td>
   </tr>
   <tr class="affordableRow" height="20" style="height:15.0pt">
     	<td rowspan="3" style="text-align:center"><b>Affordable</b></td>
       <td style="text-align:center">&nbsp;&lt;30%</td>
-			<td>6,571</td>
-      <td>42</td>
-      <td>1,733</td>
-      <td>908</td>
-			<td>9,254</td>
-			<td>3,940</td>
+			<td><!--{{ aff30PO | number }}-->1,745</td>
+      <td><!--{{ aff30NO | number }}-->17</td>
+      <td><!--{{ aff30PR | number }}-->214</td>
+      <td><!--{{ aff30NR | number }}-->109</td>
+			<td><!--{{ aff30PO + aff30NO + aff30PR  + aff30NR | number}}-->2,085</td>
+      <td>3,940</td>
+      <td>11,339</td>
 			<td>39,400</td>
 		</tr>
 		<tr class="affordableRow" height="22" style="height:16.5pt">
       <td style="text-align:center">30-50%</td>
-			<td>950</td>
-      <td>261</td>
-      <td>431</td>
-      <td>103</td>
-			<td>1,745</td>
-			<td>1,220</td>
+			<td><!--{{ aff50PO | number }}-->311</td>
+      <td><!--{{ aff50NO | number }}-->137</td>
+      <td><!--{{ aff50PR | number }}-->128</td>
+      <td><!--{{ aff50NR | number }}-->77</td>
+			<td><!--{{ aff50PO + aff50NO + aff50PR  + aff50NR | number}}-->653</td>
+      <td>1,220</td>
+      <td>2,398</td>
 			<td>12,200</td>
 		</tr>
 		<tr class="affordableRow" height="22" style="height:16.5pt">
       <td style="text-align:center">50-80%</td>
-			<td>145</td>
-      <td>463</td>
-      <td>18</td>
-      <td>666</td>
-			<td>1,292</td>
-			<td>1,940</td>
+			<td><!--{{ aff80PO | number }}-->48</td>
+      <td><!--{{ aff80NO | number }}-->351</td>
+      <td><!--{{ aff80PR | number }}-->16</td>
+      <td><!--{{ aff80NR | number }}-->63</td>
+			<td><!--{{ aff80PO + aff80NO + aff80PR  + aff80NR | number}}-->478</td>
+      <td>1,940</td>
+      <td>1,282</td>
 			<td>19,400</td>
 		</tr>
     <tr class="workforceRow" height="20" style="height:15.0pt">
 			<td style="text-align:center"><b>Workforce</b></td>
 			<td style="text-align:center">80-120%</td>
-			<td>53</td>
-      <td>374</td>
-      <td>0</td>
-      <td>0</td>
-			<td>427</td>
-			<td>1,150</td>
+			<td><!--{{ workforcePO | number }}-->16</td>
+      <td><!--{{ workforceNO | number }}-->305</td>
+      <td><!--{{ workforcePR | number }}-->1</td>
+      <td><!--{{ workforceNR | number }}-->179</td>
+			<td><!--{{ workforcePO + workforceNO + workforcePR  + workforceNR | number}}-->501</td>
+      <td>1,150</td>
+      <td>1,416</td>
 			<td>11,500</td>
     </tr>
     <tr class="marketRateRow" height="40" style="height:30.0pt">
 			<td style="text-align:center"><b>Market-Rate</b></td>
 			<td style="text-align:center"></td>
-      <td>0</td>
-      <td>1,309</td>
-      <td>0</td>
-      <td>2,069</td>
-			<td>3,378</td>
-			<td>1,500</td>
+      <td><!--{{ marketPO | number }}-->1</td>
+      <td><!--{{ marketNO | number }}-->478</td>
+      <td><!--{{ marketPR | number }}-->0</td>
+      <td><!--{{ marketNR | number }}-->752</td>
+			<td><!--{{ marketPO + marketNO + marketPR  + marketNR | number}}-->1,231</td>
+      <td>1,500</td>
+      <td>4,609</td>
 			<td>15,000</td>
     </tr>
     <tfoot height="20" style="height:15.0pt">
 			<td style="text-align:center"><b>Total</b></td>
 			<td></td>
-			<td style="text-align:right">7,719</td>
-			<td style="text-align:right">2,449</td>
-			<td style="text-align:right">2,182</td>
-			<td style="text-align:right">3,824</td>
-			<td style="text-align:right">16,174</td>
-			<td style="text-align:right">10,000</td>
+			<td style="text-align:right"><!--{{ homelessPO + aff30PO + aff50PO + aff80PO + workforcePO + marketPO | number }}-->2,121</td>
+			<td style="text-align:right"><!--{{ homelessNO + aff30NO + aff50NO + aff80NO + workforceNO + marketNO | number }}-->1,301</td>
+			<td style="text-align:right"><!--{{ homelessPR + aff30PR + aff50PR + aff80PR + workforcePR + marketPR | number }}-->439</td>
+			<td style="text-align:right"><!--{{ homelessNR + aff30NR + aff50NR + aff80NR + workforceNR + marketNR | number }}-->1,207</td>
+			<td style="text-align:right"><!--{{ homelessPO + aff30PO + aff50PO + aff80PO + workforcePO + marketPO + homelessNO + aff30NO + aff50NO + aff80NO + workforceNO + marketNO + homelessPR + aff30PR + aff50PR + aff80PR + workforcePR + marketPR + homelessNR + aff30NR + aff50NR + aff80NR + workforceNR + marketNR | number }}-->5,068</td>
+      <td style="text-align:right">10,000</td>
+      <td style="text-align:right">21,242</td>
 			<td style="text-align:right">100,000</td>
     </tfoots>
 </tbody>
@@ -166,6 +162,8 @@
 
 
 </body>  
+<script type = "text/typescript" src="js/app.module.ts"></script>
+<script src="js/charts.js"></script>
 
 
 </html>

@@ -1,10 +1,9 @@
 import xlwt
 import os
 import shutil
-import xlrd
 import csv
 
-HAPData = open(r'G:\A_STAFF\Jessica\Housing\HAP Dashboard\Jan-DecemberCombined_Test.csv')
+HAPData = open(r'C:\Users\jessica.hammond\Documents\HAP_notonGithub\Jan-JuneCombined_2020.csv')
 
 newRenter = 0
 newHomeowner = 0
@@ -15,25 +14,25 @@ newRenter_0to29 = 0
 newRenter_30to50 = 0
 newRenter_50to80 = 0
 newRenter_80to120 = 0
-newRenter_120Up = 0
+newRenter_120 = 0
 newHomeowner_Homeless = 0
 newHomeowner_0to29 = 0
 newHomeowner_30to50 = 0
 newHomeowner_50to80 = 0
 newHomeowner_80to120 = 0
-newHomeowner_120Up = 0
+newHomeowner_120 = 0
 preservedRenter_Homeless = 0
 preservedRenter_0to29 = 0
 preservedRenter_30to50 = 0
 preservedRenter_50to80 = 0
 preservedRenter_80to120 = 0
-preservedRenter_120Up = 0
+preservedRenter_120 = 0
 preservedHomeowner_Homeless = 0
 preservedHomeowner_0to29 = 0
 preservedHomeowner_30to50 = 0
 preservedHomeowner_50to80 = 0
 preservedHomeowner_80to120 = 0
-preservedHomeowner_120Up = 0
+preservedHomeowner_120 = 0
 errors = 0
 rowCount = 0
 programs = {}
@@ -84,8 +83,8 @@ for row in reader:
                     print "80-120%"
                     preservedRenter_80to120 = preservedRenter_80to120 + unitCount
                 elif ami == ">120%":
-                    print ">120%"
-                    preservedRenter_120Up = preservedRenter_120Up + unitCount
+                    print "120%"
+                    preservedRenter_120 = preservedRenter_120 + unitCount
                 else:
                     print "Something went wrong with Renter Preservation"
                     errors = errors + 1
@@ -106,10 +105,10 @@ for row in reader:
                     newRenter_50to80 = newRenter_50to80 + unitCount
                 elif ami == "80-120%":
                     print "80-120%"
-                    newRenter_50to80 = newRenter_50to80 + unitCount
+                    newRenter_80to120 = newRenter_80to120 + unitCount
                 elif ami == ">120%":
                     print ">120%"
-                    newRenter_120Up = newRenter_120Up + unitCount
+                    newRenter_120 = newRenter_120 + unitCount
                 else:
                     print "Something went wrong with Renter New"
                     errors = errors + 1
@@ -135,8 +134,7 @@ for row in reader:
                     print "80-120%"
                     preservedHomeowner_80to120 = preservedHomeowner_80to120 + unitCount
                 elif ami == ">120%":
-                    print ">120%"
-                    preservedHomeowner_120Up = preservedHomeowner_120Up + unitCount
+                    preservedHomeowner_120 = preservedHomeowner_120 + unitCount
                 else:
                     print "Something went wrong"
                     errors = errors + 1
@@ -160,7 +158,7 @@ for row in reader:
                     newHomeowner_80to120 = newHomeowner_80to120 + unitCount
                 elif ami == ">120%":
                     print ">120%"
-                    newHomeowner_120Up = newHomeowner_120Up + unitCount
+                    newHomeowner_120 = newHomeowner_120 + unitCount
                 else:
                     print "Something went wrong"
                     errors = errors + 1
@@ -176,25 +174,25 @@ print "newRenter_0to29", newRenter_0to29
 print "newRenter_30to50", newRenter_30to50
 print "newRenter_50to80", newRenter_50to80
 print "newRenter_80to120", newRenter_80to120
-print "newRenter_120Up", newRenter_120Up
+print "newRenter_120", newRenter_120
 print "newHomeowner_Homeless", newHomeowner_Homeless
 print "newHomeowner_0to29", newHomeowner_0to29
 print "newHomeowner_30to50", newHomeowner_30to50
 print "newHomeowner_50to80", newHomeowner_50to80
 print "newHomeowner_80to120", newHomeowner_80to120
-print "newHomeowner_120", newHomeowner_120Up
+print "newHomeowner_120", newHomeowner_120
 print "preservedRenter_Homeless", preservedRenter_Homeless
 print "preservedRenter_0to29", preservedRenter_0to29
 print "preservedRenter_30to50", preservedRenter_30to50
 print "preservedRenter_50to80", preservedRenter_50to80
 print "preservedRenter_80to120", preservedRenter_80to120
-print "preservedRenter_120up", preservedRenter_120Up
+print "preservedRenter_120", preservedRenter_120
 print "preservedHomeowner_Homeless", preservedHomeowner_Homeless
 print "preservedHomeowner_0to29", preservedHomeowner_0to29
 print "preservedHomeowner_30to50", preservedHomeowner_30to50
 print "preservedHomeowner_50to80", preservedHomeowner_50to80
 print "preservedHomeowner_80to120", preservedHomeowner_80to120
-print "preservedHomeowner_120up", preservedHomeowner_120Up
+print "preservedHomeowner_120", preservedHomeowner_120
 print "errors", errors
 
 Total_New = newRenter + newHomeowner
@@ -205,9 +203,9 @@ Total_0to29 = newRenter_0to29 + newHomeowner_0to29 + preservedRenter_0to29 + pre
 Total_30to50 = newRenter_30to50 + newHomeowner_30to50 + preservedRenter_30to50 + preservedHomeowner_30to50
 Total_50to80 = newRenter_50to80 + newHomeowner_50to80 + preservedRenter_50to80 + preservedHomeowner_50to80
 Total_80to120 = newRenter_80to120 + newHomeowner_80to120 + preservedRenter_80to120 + preservedHomeowner_80to120
-Total_120up = newRenter_120Up + newHomeowner_120Up + preservedRenter_120Up + preservedHomeowner_120Up
+Total_120 = newRenter_120 + newHomeowner_120 + preservedRenter_120 + preservedHomeowner_120
 
-with open('H:\HAP\writeData.csv', mode='wb') as file:
+with open('C:\Users\jessica.hammond\Documents\HAP_notonGithub\writeDataJune2020.csv', mode='wb') as file:
     writer = csv.writer(file, delimiter=',')
     writer.writerow(['Housing Type', 'AMI', 'Owner Preserved Units', 'Owner New Units', 'Renter Preserved Units', 'Renter New Units', '2019','Annual Goal','10 Year Goal'])
     writer.writerow(['Homeless','',str(preservedHomeowner_Homeless), str(newHomeowner_Homeless), str(preservedRenter_Homeless), str(newRenter_Homeless), str(Total_Homeless), '250', '2500'])
@@ -215,10 +213,10 @@ with open('H:\HAP\writeData.csv', mode='wb') as file:
     writer.writerow(['Affordable', '30-50%', str(preservedHomeowner_30to50), str(newHomeowner_30to50), str(preservedRenter_30to50), str(newRenter_30to50), str(Total_30to50), '1220', '12200'])
     writer.writerow(['Affordable', '50-80%', str(preservedHomeowner_50to80), str(newHomeowner_50to80), str(preservedRenter_50to80), str(newRenter_50to80), str(Total_50to80), '1940', '19400'])
     writer.writerow(['Workforce', '80-120%', str(preservedHomeowner_80to120), str(newHomeowner_80to120), str(preservedRenter_80to120), str(newRenter_80to120), str(Total_80to120), '1150', '11500'])
-    writer.writerow(['Market-Rate', '>120%', str(preservedHomeowner_120Up), str(newHomeowner_120Up), str(preservedRenter_120Up), str(newRenter_120Up), str(Total_120up), '1500', '15000'])
+    writer.writerow(['Market-Rate', '', str(preservedHomeowner_120), str(newHomeowner_120), str(preservedRenter_120), str(newRenter_120), str(Total_120), '1500', '15000'])
     writer.writerow(['Total','', str(preservedHomeowner), str(newHomeowner), str(preservedRenter), str(newRenter), str(Total), '10000', '100000'])
 
-with open('H:\HAP\programData.csv', mode='wb') as file:
+with open('C:\Users\jessica.hammond\Documents\HAP_notonGithub\programDataJune2020.csv', mode='wb') as file:
     writer = csv.writer(file, delimiter=',')
     writer.writerow(["Programs","Units"])
     for xprogram in programs:
