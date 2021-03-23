@@ -51,7 +51,7 @@
         <div class="set">
          <div class="row">
            <div class="columns">
-<div ng-app="myApp" ng-controller="myCtrl">
+<!-- <div ng-app="myApp" ng-controller="myCtrl"> -->
 
 <table cellspacing="0" style="border-color:black; width: 100%">
 <tbody>
@@ -60,10 +60,12 @@
     <td rowspan="2" >% Area Median Income</td>
     <td colspan="2">Owner</td>
     <td colspan="2">Renter</td>
-    <td rowspan="2">Jan - June 2020</td>
+    <td rowspan="2">Jan - December 2020</td>
     <td rowspan="2">Annual Goal</td>
     <td rowspan="2">2019 - Present</td>
     <td rowspan="2">10-Year Goal</td>
+    <td rowspan="2" style="background-color: white;"></td>
+    <td rowspan="2">COVID-19 Rental Assistance</td>
   </tr>
   <tr height="40" style="height:30.0pt">
     <td height="40" >Preserved Units</td>
@@ -73,90 +75,104 @@
     </tr>
   </thead>
   <tr id="homelessRow" height="20" style="height:15.0pt">
-    <td height="20" style="text-align:center"><b>Homeless</b></td>
-    <td style="text-align:center"></td>
-    <td>0</td>
-    <td>0</td>
-    <td>80</td>
-    <td>27</td>
-    <td>107</td>
-    <td>250</td>
-    <td>185</td>
-    <td>2,500</td>
+      <td height="20" style="text-align:center"><b>Homeless</b></td>
+      <td style="text-align:center"></td>
+      <td>0</td>      <!--Homeless Perserved Owner-->
+      <td>0</td>      <!--Homeless New Owner-->
+      <td>95</td>     <!--Homeless Perserved Renter-->
+      <td>39</td>     <!--Homeless New Renter-->
+      <td>134</td>    <!--Homeless 2020-->
+      <td>250</td>    <!--Homeless Annual Goal-->
+      <td>212</td>    <!--Homeless All Time-->
+      <td>2,500</td>  <!--Homeless 10 Year Goal-->
+      <td style="background-color: white;"></td>
+      <td>0</td>      <!--Homeless CERA-->
   </tr>
   <tr class="affordableRow" height="20" style="height:15.0pt">
     	<td rowspan="3" style="text-align:center"><b>Affordable</b></td>
       <td style="text-align:center">&nbsp;&lt;30%</td>
-			<td>1,745</td>
-      <td>18</td>
-      <td>214</td>
-      <td>109</td>
-			<td>2,086</td>
-      <td>3,940</td>
-      <td>11,340</td>
-			<td>39,400</td>
+			<td>3,440</td>   <!--30% Perserved Owner-->
+      <td>46</td>      <!--30% New Owner-->
+      <td>496</td>   <!--30% Perserved Renter-->
+      <td>455</td>     <!--30% New Renter-->
+			<td>4,437</td>   <!--30% 2020-->
+      <td>3,940</td>   <!--30% Annual Goal-->
+      <td>13,691</td>  <!--30% All Time-->
+			<td>39,400</td>  <!--30% 10 Year Goal-->
+      <td style="background-color: white;"></td>
+      <td>7,208</td>   <!--30% CERA-->
 		</tr>
 		<tr class="affordableRow" height="22" style="height:16.5pt">
       <td style="text-align:center">30-50%</td>
-			<td>311</td>
-      <td>140</td>
-      <td>128</td>
-      <td>77</td>
-			<td>656</td>
-      <td>1,220</td>
-      <td>2,401</td>
-			<td>12,200</td>
+			<td>470</td>     <!--30-50% Perserved Owner-->
+      <td>376</td>     <!--30-50% New Owner-->
+      <td>131</td>     <!--30-50% Perserved Renter-->
+      <td>139</td>     <!--30-50% New Renter-->
+			<td>1,116</td>   <!--30-50% 2020-->
+      <td>1,220</td>   <!--30-50% Annual Goal-->
+      <td>2,861</td>   <!--30-50% All Time-->
+			<td>12,200</td>  <!--30-50% 10 Year Goal-->
+      <td style="background-color: white;"></td>
+      <td>1,557</td>   <!--30-50% CERA-->
 		</tr>
 		<tr class="affordableRow" height="22" style="height:16.5pt">
       <td style="text-align:center">50-80%</td>
-			<td>48</td>
-      <td>357</td>
-      <td>16</td>
-      <td>63</td>
-			<td>484</td>
-      <td>1,940</td>
-      <td>1,288</td>
-			<td>19,400</td>
+			<td>97</td>      <!--50-80% Perserved Owner-->
+      <td>820</td>     <!--50-80% New Owner-->
+      <td>96</td>      <!--50-80% Perserved Renter-->
+      <td>29</td>      <!--50-80% New Renter-->
+			<td>1,042</td>   <!--50-80% 2020-->
+      <td>1,940</td>   <!--50-80% Annual Goal-->
+      <td>1,846</td>   <!--50-80% All Time-->
+			<td>19,400</td>  <!--50-80% 10 Year Goal-->
+      <td style="background-color: white;"></td>
+      <td>397</td>     <!--50-80% CERA-->
 		</tr>
     <tr class="workforceRow" height="20" style="height:15.0pt">
 			<td style="text-align:center"><b>Workforce</b></td>
 			<td style="text-align:center">80-120%</td>
-			<td>16</td>
-      <td>308</td>
-      <td>1</td>
-      <td>179</td>
-			<td>504</td>
-      <td>1,150</td>
-      <td>1,419</td>
-			<td>11,500</td>
+			<td>32</td>      <!--80-120% Perserved Owner-->
+      <td>674</td>     <!--80-120% New Owner-->
+      <td>16</td>      <!--80-120% Perserved Renter-->
+      <td>1</td>       <!--80-120% New Renter-->
+			<td>723</td>     <!--80-120% 2020-->
+      <td>1,150</td>   <!--80-120% Annual Goal-->
+      <td>1,638</td>   <!--80-120% All Time-->
+			<td>11,500</td>  <!--80-120% 10 Year Goal-->
+      <td style="background-color: white;"></td>
+      <td>13</td>      <!--80-120% CERA-->
     </tr>
     <tr class="marketRateRow" height="40" style="height:30.0pt">
 			<td style="text-align:center"><b>Market-Rate</b></td>
 			<td style="text-align:center"></td>
-      <td>1</td>
-      <td>478</td>
-      <td>0</td>
-      <td>752</td>
-			<td>1,231</td>
-      <td>1,500</td>
-      <td>4,609</td>
-			<td>15,000</td>
+      <td>6</td>       <!--Market-Rate Perserved Owner-->
+      <td>1,720</td>   <!--Market-Rate New Owner-->
+      <td>0</td>       <!--Market-Rate Perserved Renter-->
+      <td>2,579</td>   <!--Market-Rate New Renter-->
+			<td>4,305</td>   <!--Market-Rate 2020-->
+      <td>1,500</td>   <!--Market-Rate Annual Goal-->
+      <td>7,683</td>   <!--Market-Rate All Time-->
+			<td>15,000</td>  <!--Market-Rate 10 Year Goal-->
+      <td style="background-color: white;"></td>
+      <td>0</td>       <!--Market-Rate CERA-->
     </tr>
     <tfoot height="20" style="height:15.0pt">
 			<td style="text-align:center"><b>Total</b></td>
 			<td></td>
-			<td style="text-align:right">2,121</td>
-			<td style="text-align:right">1,301</td>
-			<td style="text-align:right">439</td>
-			<td style="text-align:right">1,207</td>
-			<td style="text-align:right">5,068</td>
-      <td style="text-align:right">10,000</td>
-      <td style="text-align:right">21,242</td>
-			<td style="text-align:right">100,000</td>
+			<td style="text-align:right">4,045</td>    <!--Total Perserved Owner-->
+			<td style="text-align:right">3,636</td>    <!--Total New Owner-->
+			<td style="text-align:right">834</td>      <!--Total Perserved Renter-->
+			<td style="text-align:right">3,242</td>    <!--Total New Renter-->
+			<td style="text-align:right">11,757</td>   <!--Total 2020-->
+      <td style="text-align:right">10,000</td>   <!--Total Annual Goal-->
+      <td style="text-align:right">27,931</td>   <!--Total All Time-->
+			<td style="text-align:right">100,000</td>  <!--Total 10 Year Goal-->
+      <td style="background-color: white;"></td>
+      <td style="text-align:right">9,175</td>    <!--Total CERA-->
     </tfoots>
 </tbody>
 </table>
-</div>
+<!--</div> -->
 
 <link rel="stylesheet" href="stylesheet.css" /> 
 
